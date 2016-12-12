@@ -1,31 +1,499 @@
+/* CHANGELOG AREA  */
+/* Please indicate what you did to the code in this space */
+/* Failure to do so will result in ridicule and ostracism */
+/* 
+* 2-7-15 current v3.0.3
+* 2-17-15 was playing with my flair again ~dz v3.0.3.69 
+* 2-21-15 was playing with my flair again ~dz v3.0.3.69b 
+* 3-1-15 added gradient to pleb's flair ~dz v3.0.3.70 
+* 3-4-15 added a banner image ~dz v3.0.3.71 
+* 4-3-15 was playing with my flair again ~dz v3.0.3.72 
+* 5-5-15 adjusted autowikibot text, added flair for TL_DRead_it ~dz v3.0.3.73 
+* 5-8-15 adjusted flair for TL_Dread_it ~dz v3.0.3.74 
+* 5-8-15 adjusted flair for TL_Dread_it ~dz v3.0.3.75 
+* 5-15-15 added back the spoiler tag code ~dz v3.0.4 
+* 5-17-15 fixed theme toggle button background ~dz v3.0.4.1 
+* 5-19-15 added new image to banner rotation (Banner38, double odds of getting it) and also fixed styling of automod config option in mod toolbox area  ~dz v3.0.4.2 
+* 5-20-15 added code to display a banner if the user is not logged in at all; previously displayed blank area. ~dz v3.0.4.3 
+* 5-23-15 made 'you are an approved submitter' button section transparent ~dz v3.0.4.4 
+* 8-6-15 created tehroot's mod flair ~dz v3.0.4.5 
+* 8-7-15 added Banner39 & 40, uss south dakota ~dz v3.0.4.6 
+* 9-23-15 new blurry spoiler tags, ~dz v3.0.4.7 
+* 10-21-15 styling new mute button ~dz v3.0.4.8 
+* 11-7-15 worked on mod/top poster flairs. now uses transitions to fade in/out ~dz v3.0.4.9 
+* 11-9-15 implemented AMA flair, gave all mod flairs box shadow. ~dz & vepr v3.0.4.10 
+* 11-25-15 implemented commenter flair 11-25-15 ~dz v3.0.4.11 
+* 12-6-15 added degree symbol markdown code 12-6-15 ~dz v3.0.4.12 
+* 1-22-16 removed tehroot mod flair and replaced it with kurt's flair, revamped flair code by consolidation ~dz v3.1.0.0 
+* 1-22-16 replaced sidebar rules accordion code ~dz v3.1.1.0
+* 1-26-16 changes to downvote popup ~dz v3.1.1.1
+* 1-26-16 addtl changes to downvote popup ~dz v3.1.1.2
+* 3-12-16 added transparent background to rules button in sidebar, as well as usernotes button from moderator toolbox extension ~dz v3.1.1.3
+* 3-12-16 added infographic linkflair ~dz v3.1.1.4
+* 6-25-16 made shortlink text in sidebar more noticeable. ~dz v3.1.1.5
+* 8-11-16 removed linkflair mouseover icon (and other unused images) to make room for another banner image ~dz v3.1.1.6
+* 11-26-16 Changed Kurt's flair; removed an old banner image (Banner2) and added a new one (Banner45). ~dz v3.1.1.7
+* 12-12-16 Added "error" linkflair ~dz v3.1.1.8
+* 12-12-16 Added "dungaree blue" stripes to CNO flair and changing version number so I don't have to type 4 numbers ~dz v3.2
+*/
+/* END CHANGELOG AREA */
+
+
+/* totally worthless smallcaps text  */
+/* another shitty bit of css by dziban */
+/* use [text](/big) for standard smallcaps, or ######text */
+/* Enter NeonGreenTiger to get it all sorted */
+
+a[href$="/big"] {
+    color:navy;
+    font-family: "Saved By Zero", "Segoe UI", verdana, arial, helvetica, sans-serif;
+    font-variant:small-caps;
+    font-weight: normal!important;
+    font-size: xx-large;
+    text-shadow: 1px 1px 1px gold;
+} 
+
+/* end NGT's tweek */
+
+/* Italics and code e.g. "*`text`*" will be standard smallcaps. */
+.md em code {
+    font-variant:small-caps;
+    font-weight: normal!important;
+    font-style: normal !important;
+    font-family: verdana, arial, helvetica, sans-serif;
+/*    font-size: larger;  */
+}
+
+/* Double italics e.g. "*_text_*" will be italicized smallcaps. */
+.md em em {
+    font-variant:small-caps;
+    font-weight: normal!important;
+/*    font-size: larger;  */
+}
+
+/* Bold and code e.g. "**`text`** will be bold smallcaps. */
+
+.md strong code {
+    font-variant:small-caps;
+    font-weight: bold!important;
+    font-style: normal !important;
+    font-family: verdana, arial, helvetica, sans-serif;
+/*    font-size: larger;  */
+}
+
+/* end shittiness */
+
 /*===============Header===============*/
 /* Banner Area */
 body {
     background: #B0BAC3;
 }
-#header {
+/*#header {
     max-width:100%;
-    background: url(%%active2%%) #ffffff repeat top left; 
-    border-bottom: 5px solid blue
-}
-#header .redditname a {
-    /* visibility:hidden; */
+   background: url(%%Banner9%%) #ffffff repeat top left !important;
+    border-bottom: 5px solid blue 
+}*/
+
+
+
+/*#header .redditname a {
+    visibility:hidden;
     font-size: 80%;
     color: white;
     text-shadow: 1px 1px black; 
-} 
+}*/
 .pagename a {
-    text-transform: uppercase
-}
-#header-img {
-    margin-top: -22px;
-    /*background: url(%%alien%%) ;*/
+    /*text-transform: uppercase*/
+    background: url(%%WSPName%%) no-repeat;
+    vertical-align: bottom;
+    display: inline-block;
+    width: 496px!important; 
+    height: 163px!important;
+    font-size: 0!important;
 }
 
-/* My Reddts Bar */
+/* Random banner images (from r/circlebroke2)
+--------------------------------------------- */
+input[name="uh"] ~ a:after {
+  content: "";
+  width: 3840px;
+  height: 180px;
+  padding: 0;
+  position: absolute;
+  top: -161px; /*201px*/
+  right: 0;
+  /*border-bottom: 5px solid blue;*/
+  border-radius: 0;
+  z-index: -1;
+}
+
+body:not(.loggedin) #header-bottom-left {
+  background: url(%%Banner1%%) repeat;
+  height:180px;
+  top: -161px; 
+} 
+
+/* "value" matched to last two hexadecimal digits in .logout "uh" number */
+/* Max 256 images 00 through ff */
+/* Currently configured for 44 images, with six "uh" values assigned to each image (except one image with four "uh" values)...6 * 42 = 252 + 4 = 256 */
+
+input[name=uh][value$="00"] ~ a:after,
+input[name=uh][value$="01"] ~ a:after,
+input[name=uh][value$="02"] ~ a:after,
+input[name=uh][value$="03"] ~ a:after,
+input[name=uh][value$="04"] ~ a:after,
+input[name=uh][value$="05"] ~ a:after {
+  background: url(%%Banner1%%);
+}
+input[name=uh][value$="06"] ~ a:after,
+input[name=uh][value$="07"] ~ a:after,
+input[name=uh][value$="08"] ~ a:after,
+input[name=uh][value$="09"] ~ a:after,
+input[name=uh][value$="0a"] ~ a:after,
+input[name=uh][value$="0b"] ~ a:after {
+  background: url(%%Banner45%%);
+}
+input[name=uh][value$="0c"] ~ a:after,
+input[name=uh][value$="0d"] ~ a:after,
+input[name=uh][value$="0e"] ~ a:after,
+input[name=uh][value$="0f"] ~ a:after,
+input[name=uh][value$="10"] ~ a:after,
+input[name=uh][value$="11"] ~ a:after {
+  background: url(%%Banner3%%);
+}
+input[name=uh][value$="12"] ~ a:after,
+input[name=uh][value$="13"] ~ a:after,
+input[name=uh][value$="14"] ~ a:after,
+input[name=uh][value$="15"] ~ a:after,
+input[name=uh][value$="16"] ~ a:after,
+input[name=uh][value$="17"] ~ a:after {
+  background: url(%%Banner4%%);
+}
+input[name=uh][value$="18"] ~ a:after,
+input[name=uh][value$="19"] ~ a:after,
+input[name=uh][value$="1a"] ~ a:after,
+input[name=uh][value$="1b"] ~ a:after,
+input[name=uh][value$="1c"] ~ a:after,
+input[name=uh][value$="1d"] ~ a:after {
+  background: url(%%Banner15%%);              /* Banner5 doesn't work too well, replacing it for the time being */
+}
+input[name=uh][value$="1e"] ~ a:after,
+input[name=uh][value$="1f"] ~ a:after,
+input[name=uh][value$="20"] ~ a:after, 
+input[name=uh][value$="21"] ~ a:after,
+input[name=uh][value$="22"] ~ a:after,
+input[name=uh][value$="23"] ~ a:after {
+  background: url(%%Banner6%%);
+}
+input[name=uh][value$="24"] ~ a:after,
+input[name=uh][value$="25"] ~ a:after,
+input[name=uh][value$="26"] ~ a:after,
+input[name=uh][value$="27"] ~ a:after,
+input[name=uh][value$="28"] ~ a:after,
+input[name=uh][value$="29"] ~ a:after {
+  background: url(%%Banner7%%);
+}
+input[name=uh][value$="2a"] ~ a:after,
+input[name=uh][value$="2b"] ~ a:after,
+input[name=uh][value$="2c"] ~ a:after,
+input[name=uh][value$="2d"] ~ a:after,
+input[name=uh][value$="2e"] ~ a:after,
+input[name=uh][value$="2f"] ~ a:after {
+  background: url(%%Banner8%%);
+}
+input[name=uh][value$="30"] ~ a:after, 
+input[name=uh][value$="31"] ~ a:after,
+input[name=uh][value$="32"] ~ a:after,
+input[name=uh][value$="33"] ~ a:after,
+input[name=uh][value$="34"] ~ a:after,
+input[name=uh][value$="35"] ~ a:after {
+  background: url(%%Banner9%%);
+}
+input[name=uh][value$="36"] ~ a:after,
+input[name=uh][value$="37"] ~ a:after,
+input[name=uh][value$="38"] ~ a:after,
+input[name=uh][value$="39"] ~ a:after,
+input[name=uh][value$="3a"] ~ a:after,
+input[name=uh][value$="3b"] ~ a:after {
+  background: url(%%Banner10%%);
+}
+input[name=uh][value$="3c"] ~ a:after,
+input[name=uh][value$="3d"] ~ a:after,
+input[name=uh][value$="3e"] ~ a:after,
+input[name=uh][value$="3f"] ~ a:after,
+input[name=uh][value$="40"] ~ a:after, 
+input[name=uh][value$="41"] ~ a:after {
+  background: url(%%Banner11%%);
+}
+input[name=uh][value$="42"] ~ a:after,
+input[name=uh][value$="43"] ~ a:after,
+input[name=uh][value$="44"] ~ a:after,
+input[name=uh][value$="45"] ~ a:after,
+input[name=uh][value$="46"] ~ a:after,
+input[name=uh][value$="47"] ~ a:after {
+  background: url(%%Banner12%%);
+}
+input[name=uh][value$="48"] ~ a:after,
+input[name=uh][value$="49"] ~ a:after,
+input[name=uh][value$="4a"] ~ a:after,
+input[name=uh][value$="4b"] ~ a:after,
+input[name=uh][value$="4c"] ~ a:after,
+input[name=uh][value$="4d"] ~ a:after {
+  background: url(%%Banner13%%);
+}
+input[name=uh][value$="4e"] ~ a:after,
+input[name=uh][value$="4f"] ~ a:after,
+input[name=uh][value$="50"] ~ a:after,
+input[name=uh][value$="51"] ~ a:after,
+input[name=uh][value$="52"] ~ a:after,
+input[name=uh][value$="53"] ~ a:after {
+  background: url(%%Banner14%%);
+}
+input[name=uh][value$="54"] ~ a:after,
+input[name=uh][value$="55"] ~ a:after,
+input[name=uh][value$="56"] ~ a:after,
+input[name=uh][value$="57"] ~ a:after,
+input[name=uh][value$="58"] ~ a:after,
+input[name=uh][value$="59"] ~ a:after {
+  background: url(%%Banner16%%);
+}
+input[name=uh][value$="5a"] ~ a:after,
+input[name=uh][value$="5b"] ~ a:after,
+input[name=uh][value$="5c"] ~ a:after,
+input[name=uh][value$="5d"] ~ a:after,
+input[name=uh][value$="5e"] ~ a:after,
+input[name=uh][value$="5f"] ~ a:after {
+  background: url(%%Banner17%%);
+}
+input[name=uh][value$="60"] ~ a:after,
+input[name=uh][value$="61"] ~ a:after,
+input[name=uh][value$="62"] ~ a:after,
+input[name=uh][value$="63"] ~ a:after,
+input[name=uh][value$="64"] ~ a:after,
+input[name=uh][value$="65"] ~ a:after {
+  background: url(%%Banner18%%);
+}
+input[name=uh][value$="66"] ~ a:after,
+input[name=uh][value$="67"] ~ a:after,
+input[name=uh][value$="68"] ~ a:after,
+input[name=uh][value$="69"] ~ a:after,
+input[name=uh][value$="6a"] ~ a:after,
+input[name=uh][value$="6b"] ~ a:after {
+  background: url(%%Banner19%%);
+}
+input[name=uh][value$="6c"] ~ a:after,
+input[name=uh][value$="6d"] ~ a:after,
+input[name=uh][value$="6e"] ~ a:after,
+input[name=uh][value$="6f"] ~ a:after,
+input[name=uh][value$="70"] ~ a:after,
+input[name=uh][value$="71"] ~ a:after {
+  background: url(%%Banner20%%);
+}
+input[name=uh][value$="72"] ~ a:after,
+input[name=uh][value$="73"] ~ a:after,
+input[name=uh][value$="74"] ~ a:after,
+input[name=uh][value$="75"] ~ a:after,
+input[name=uh][value$="76"] ~ a:after,
+input[name=uh][value$="77"] ~ a:after {
+  background: url(%%Banner21%%);
+}
+input[name=uh][value$="78"] ~ a:after,
+input[name=uh][value$="79"] ~ a:after,
+input[name=uh][value$="7a"] ~ a:after,
+input[name=uh][value$="7b"] ~ a:after,
+input[name=uh][value$="7c"] ~ a:after,
+input[name=uh][value$="7d"] ~ a:after {
+  background: url(%%Banner22%%);
+}
+input[name=uh][value$="7e"] ~ a:after,
+input[name=uh][value$="7f"] ~ a:after,
+input[name=uh][value$="80"] ~ a:after,
+input[name=uh][value$="81"] ~ a:after,
+input[name=uh][value$="82"] ~ a:after,
+input[name=uh][value$="83"] ~ a:after {
+  background: url(%%Banner23%%);
+}
+input[name=uh][value$="84"] ~ a:after,
+input[name=uh][value$="85"] ~ a:after,
+input[name=uh][value$="86"] ~ a:after,
+input[name=uh][value$="87"] ~ a:after,
+input[name=uh][value$="88"] ~ a:after,
+input[name=uh][value$="89"] ~ a:after {
+  background: url(%%Banner24%%);
+}
+input[name=uh][value$="8a"] ~ a:after,
+input[name=uh][value$="8b"] ~ a:after,
+input[name=uh][value$="8c"] ~ a:after,
+input[name=uh][value$="8d"] ~ a:after,
+input[name=uh][value$="8e"] ~ a:after,
+input[name=uh][value$="8f"] ~ a:after {
+  background: url(%%Banner25%%);
+}
+input[name=uh][value$="90"] ~ a:after,
+input[name=uh][value$="91"] ~ a:after,
+input[name=uh][value$="92"] ~ a:after,
+input[name=uh][value$="93"] ~ a:after,
+input[name=uh][value$="94"] ~ a:after,
+input[name=uh][value$="95"] ~ a:after {
+  background: url(%%Banner26%%);
+}
+input[name=uh][value$="96"] ~ a:after,
+input[name=uh][value$="97"] ~ a:after,
+input[name=uh][value$="98"] ~ a:after,
+input[name=uh][value$="99"] ~ a:after,
+input[name=uh][value$="9a"] ~ a:after,
+input[name=uh][value$="9b"] ~ a:after {
+  background: url(%%Banner27%%);
+}
+input[name=uh][value$="9c"] ~ a:after,
+input[name=uh][value$="9d"] ~ a:after,
+input[name=uh][value$="9e"] ~ a:after,
+input[name=uh][value$="9f"] ~ a:after,
+input[name=uh][value$="a0"] ~ a:after,
+input[name=uh][value$="a1"] ~ a:after {
+  background: url(%%Banner28%%);
+}
+input[name=uh][value$="a2"] ~ a:after,
+input[name=uh][value$="a3"] ~ a:after,
+input[name=uh][value$="a4"] ~ a:after,
+input[name=uh][value$="a5"] ~ a:after,
+input[name=uh][value$="a6"] ~ a:after,
+input[name=uh][value$="a7"] ~ a:after {
+  background: url(%%Banner29%%);
+}
+input[name=uh][value$="a8"] ~ a:after,
+input[name=uh][value$="a9"] ~ a:after,
+input[name=uh][value$="aa"] ~ a:after,
+input[name=uh][value$="ab"] ~ a:after,
+input[name=uh][value$="ac"] ~ a:after,
+input[name=uh][value$="ad"] ~ a:after {
+  background: url(%%Banner30%%);
+}
+input[name=uh][value$="ae"] ~ a:after,
+input[name=uh][value$="af"] ~ a:after,
+input[name=uh][value$="b0"] ~ a:after,
+input[name=uh][value$="b1"] ~ a:after,
+input[name=uh][value$="b2"] ~ a:after,
+input[name=uh][value$="b3"] ~ a:after {
+  background: url(%%Banner31%%);
+}
+input[name=uh][value$="b4"] ~ a:after,
+input[name=uh][value$="b5"] ~ a:after,
+input[name=uh][value$="b6"] ~ a:after,
+input[name=uh][value$="b7"] ~ a:after,
+input[name=uh][value$="b8"] ~ a:after,
+input[name=uh][value$="b9"] ~ a:after {
+  background: url(%%Banner32%%);
+}
+input[name=uh][value$="ba"] ~ a:after,
+input[name=uh][value$="bb"] ~ a:after,
+input[name=uh][value$="bc"] ~ a:after,
+input[name=uh][value$="bd"] ~ a:after,
+input[name=uh][value$="be"] ~ a:after,
+input[name=uh][value$="bf"] ~ a:after {
+  background: url(%%Banner33sm%%);
+}
+input[name=uh][value$="c0"] ~ a:after,
+input[name=uh][value$="c1"] ~ a:after,
+input[name=uh][value$="c2"] ~ a:after,
+input[name=uh][value$="c3"] ~ a:after,
+input[name=uh][value$="c4"] ~ a:after,
+input[name=uh][value$="c5"] ~ a:after {
+  background: url(%%Banner34%%);
+}
+input[name=uh][value$="c6"] ~ a:after,
+input[name=uh][value$="c7"] ~ a:after,
+input[name=uh][value$="c8"] ~ a:after,
+input[name=uh][value$="c9"] ~ a:after,
+input[name=uh][value$="ca"] ~ a:after,
+input[name=uh][value$="cb"] ~ a:after {
+  background: url(%%Banner35%%);
+}
+input[name=uh][value$="cc"] ~ a:after,
+input[name=uh][value$="cd"] ~ a:after,
+input[name=uh][value$="ce"] ~ a:after,
+input[name=uh][value$="cf"] ~ a:after,
+input[name=uh][value$="d0"] ~ a:after,
+input[name=uh][value$="d1"] ~ a:after {
+  background: url(%%Banner36%%);
+}
+input[name=uh][value$="d2"] ~ a:after,
+input[name=uh][value$="d3"] ~ a:after,
+input[name=uh][value$="d4"] ~ a:after,
+input[name=uh][value$="d5"] ~ a:after,
+input[name=uh][value$="d6"] ~ a:after,
+input[name=uh][value$="d7"] ~ a:after {
+  background: url(%%Banner37sm%%);
+}
+input[name=uh][value$="d8"] ~ a:after,
+input[name=uh][value$="d9"] ~ a:after,
+input[name=uh][value$="da"] ~ a:after,
+input[name=uh][value$="db"] ~ a:after,
+input[name=uh][value$="dc"] ~ a:after,
+input[name=uh][value$="dd"] ~ a:after {
+  background: url(%%Banner38%%);
+}
+input[name=uh][value$="de"] ~ a:after,
+input[name=uh][value$="df"] ~ a:after,
+input[name=uh][value$="e0"] ~ a:after,
+input[name=uh][value$="e1"] ~ a:after,
+input[name=uh][value$="e2"] ~ a:after,
+input[name=uh][value$="e3"] ~ a:after {
+  background: url(%%Banner39%%);
+}
+input[name=uh][value$="e4"] ~ a:after,
+input[name=uh][value$="e5"] ~ a:after,
+input[name=uh][value$="e6"] ~ a:after,
+input[name=uh][value$="e7"] ~ a:after,
+input[name=uh][value$="e8"] ~ a:after,
+input[name=uh][value$="e9"] ~ a:after {
+  background: url(%%Banner40%%);
+}
+input[name=uh][value$="ea"] ~ a:after,
+input[name=uh][value$="eb"] ~ a:after,
+input[name=uh][value$="ec"] ~ a:after,
+input[name=uh][value$="ed"] ~ a:after,
+input[name=uh][value$="ee"] ~ a:after,
+input[name=uh][value$="ef"] ~ a:after {
+  background: url(%%Banner41%%);
+}
+input[name=uh][value$="f0"] ~ a:after,
+input[name=uh][value$="f1"] ~ a:after,
+input[name=uh][value$="f2"] ~ a:after,
+input[name=uh][value$="f3"] ~ a:after,
+input[name=uh][value$="f4"] ~ a:after,
+input[name=uh][value$="f5"] ~ a:after {
+  background: url(%%Banner42%%);
+}
+input[name=uh][value$="f6"] ~ a:after,
+input[name=uh][value$="f7"] ~ a:after,
+input[name=uh][value$="f8"] ~ a:after,
+input[name=uh][value$="f9"] ~ a:after,
+input[name=uh][value$="fa"] ~ a:after,
+input[name=uh][value$="fb"] ~ a:after {
+  background: url(%%Banner43%%);
+}
+input[name=uh][value$="fc"] ~ a:after,
+input[name=uh][value$="fd"] ~ a:after,
+input[name=uh][value$="fe"] ~ a:after,
+input[name=uh][value$="ff"] ~ a:after {
+  background: url(%%Banner44a%%);
+}
+
+.res-navTop input[name="uh"] ~ a:after {
+    top: 0;
+}
+
+#header-img {
+     margin-top: -44px;
+    /*background: url(%%WSPName%%) ;*/
+    }
+
+
+/* My Reddits Bar */
 #sr-header-area {
     max-width: 100%;
-    background: url(%%blank-30px%%); 
+    /*background: url(%%blank-30px%%); */
     /*background-color: #bdb8b2;*/
     /*#00305F;*/
     border-bottom: none
@@ -64,9 +532,10 @@ body {
     border-top-right-radius: 7px;
     background-color: #b0bac3 !important;
     color: black;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px 1px white;
     text-transform: uppercase;
     font-size: 80%;
+    position: relative;
 }
 .tabmenu li.selected a {
     background-color: dimgrey !important;
@@ -80,6 +549,12 @@ body {
 .tabmenu li a:hover {
     background-color: black !important;
     color: #b0bac3;
+    text-shadow:none;
+}
+
+.tabmenu li.selected a:hover {
+    color: white !important;
+    text-shadow:none;
 }
 
 /* reddit name in header area (I think) */
@@ -87,8 +562,40 @@ body {
     color:white;
     text-shadow: 1px 1px white;
 }
+
+/* link info box (shows up/downvotes when in comment view) */
 div.linkinfo {
+    color:#888;
+    background-color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+div.linkinfo .score {
     color:black;
+}
+div.linkinfo .totalvotes {
+    color:black;
+}
+
+div.linkinfo:hover {
+    color:#b0bac3;
+    background: #888;
+    border: 2px solid;
+    border-color: gold;
+    border-radius: 1px;
+    border-radius: 7px;
+}
+div.linkinfo:hover .downvotes {
+    color:darkblue;
+}
+div.linkinfo:hover .upvotes {
+    color:maroon;
+}
+div.linkinfo:hover .score {
+    color:whitesmoke;
+}
+div.linkinfo:hover .score .number, div.linkinfo:hover .score .word {
+    color:yellow;
 }
 
 /*===============Body===============*/
@@ -129,6 +636,10 @@ span.res_post_downs {
     color: #369 !important;
     text-shadow: 0px 0px 0px black !important;
     font-size: 100% !important;
+}
+
+h1.hover.redditname {
+    font-variant: small-caps;
 }
 
 /* change visited post title when highlighted, colors are too similar  */
@@ -267,42 +778,39 @@ div.arrow.downmod {
     content: "NOW HEAR THIS! Before you post, please read and follow the rules in the sidebar. We need the resolution in brackets! Failure to do so may result in your post being removed. Carry on, sailor!"
 }
 
-/* Downvote mouseover text */
-.arrow.down:hover:before {
-    position: fixed;
+/* Hover Message on Downvote */
+.arrow.down:after {
     display: block;
-    z-index: 1000;
-    padding: 4px 0;
-    border-top: 1px solid #FFD700;
-    content: "Why not upboat instead?";
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    background-color: navy;
-    color: gold;
-    text-shadow: 1px 1px black;
-    font-size: 15px;
-    /*: ;
-    -moz-box-shadow: 1px 1px 0 rgba(255, 255, 255, .4) inset;
-    box-shadow: 1px 1px 0 rgba(255, 255, 255, .4) inset;
-    -webkit-box-shadow: 1px 1px 0 rgba(255, 255, 255, .4) inset;*/
-    /* OLD CODE BELOW: ;
+    visibility: hidden;
     position: absolute;
-    display: block;
     z-index: 1000;
-    width: 200px;
-    padding: 2px;
-    border: 1px solid #333;
-    background-color: #FF002B;
-    content: "Blah";
+    margin-top: -6px;
+    margin-left: 32px;
+    padding: 12px;
+    background-color: rgba(0,0,192,0); /* navy */
+    border: none;
+    border-radius: 8px;
+    color: rgba(248,248,248,0.2);  /* whitesmoke */
+    text-shadow: 1px 1px 5px rgba(255,215,0,0.2); /* gold */
+    content: "For content that does not contribute to any discussion.";
     text-align: center;
-    font-size: 10px;
-    font-weight: normal;
-    margin-left: 2px;
-    margin-top: 2px;
-    border-radius: 5px;*/
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 120%;
+    transition: all 0.25s ease;
+    pointer-events: none;
 }
+
+.arrow.down:hover:after {
+    visibility: visible;
+    background-color: rgba(0, 0, 192, 0.7); /* navy */
+    color: rgba(248,248,248,1); /* whitesmoke */
+    margin-left: 48px;
+    text-shadow: 1px 1px 5px rgba(255,215,0,0.9); /* gold */
+    font-size: 120%;
+    font-weight: bold;
+}
+
 /*Message for when you hover over the report button*/
 .report-button:hover:after {
 position: absolute;
@@ -326,59 +834,65 @@ border-radius: 4px;
 }
 /*===============Sidebar===============*/
 /* Subreddit name in sidebar*/
-a.hover,
-h1.hover.redditname {
+.titlebox a.hover,
+.titlebox h1.hover.redditname {
     color: white !important;
     text-shadow: 3px 3px 1px black;
     font-size: xx-large;
 }
 /* Removes white background from mod actions */
-a.moderator-mail {
-    background: #b0bac3
-}
-a.reddit-edit {
-    background: #b0bac3
-}
-a.reddit-moderators {
-    background: #b0bac3
-}
-a.reddit-contributors {
-    background: #b0bac3
-}
-a.reddit-traffic {
-    background: #b0bac3
-}
-a.reddit-reported {
-    background: #b0bac3
-}
-a.reddit-spam {
-    background: #b0bac3
-}
-a.reddit-ban {
-    background: #b0bac3
-}
-a.reddit-flair {
-    background: #b0bac3
-}
-a.reddit-moderationlog {
-    background: #b0bac3
-}
-a.reddit-modqueue {
-    background: #b0bac3
+a.reddit-edit,
+a.edit-stylesheet,
+a.moderator-mail,
+a.reddit-moderators,
+a.reddit-contributors,
+a.reddit-traffic,
+a.reddit-reported,
+a.reddit-spam,
+a.reddit-edited,
+a.reddit-ban,
+a.reddit-flair,
+a.reddit-moderationlog,
+a.reddit-modqueue,
+a.reddit-unmoderated,
+a.wikiaction-revisions,
+a.wikiaction-pages,
+a.reddit-automod,
+form.toggle.leavecontributor-button,
+a.reddit-mute, 
+a.toolbox-edit,
+a.tb-un-manager,
+a.community-rules {
+    background: transparent;
 }
 
 /* number of subscribers in sidebar */
-span.number {
-    color: black !important;
+span.subscribers span.number,
+p.users-online span.number {
+    color: white !important;
     font-size: 120%;
+    text-shadow: 2px 2px 1px #000000;
+}
+
+/* hides "readers and subscribers" text */
+div.titlebox span.word {
+    display: none;
 }
 
 /*replace "readers" with something else*/
-div.titlebox span.word {
-    display: none
+.subscribers::after {
+    color: WhiteSmoke !important;
+    font-size: 120%;
+    text-shadow: 2px 2px 1px #000000;
+    content: 'sailors';
 }
-div.titlebox span.number:after {
-    content: " sailors"
+
+/*replace "online" with something else*/
+.users-online::after {
+    color: WhiteSmoke !important;
+    font-size: 120%;
+    text-shadow: 2px 2px 1px #000000;
+    content: 'underway';
 }
 
 /* you are a moderator text */
@@ -415,7 +929,6 @@ div.titlebox span.number:after {
     border: 2px solid;
     border-color: gold;
     border-radius: 1px;
-    height: 28px;
     line-height: 25px;
     text-align: center;
     border-radius: 7px;
@@ -430,14 +943,45 @@ div.titlebox span.number:after {
     color: black;
 }
 
+/*Custom submit button*/
+.side .md h5 a {
+    position: absolute;
+    top: 230px;
+    right: 7px;
+    width: 295px;
+    text-align: center;
+    font-size: 155%;
+    font-weight: bold;
+    letter-spacing: 0px;
+    background-color: whitesmoke;
+    color: #888;
+    padding: 5px 0;
+    border: 2px solid white;
+    height: 25px;
+    border-radius: 7px;
+}
+
+.side .md h5 a:hover {
+    background: #888;
+    color: #b0bac3;
+    border: 2px solid;
+    border-color: gold;
+    border-radius: 1px;
+    height: 25px;
+    border-radius: 7px;
+}
+
+.side { padding-top: 70px; }
+
+.sidebox.submit { display: none; }
+
 /* submit a new link button properties */
 .morelink {
-    background: white;
+    background: whitesmoke;
     border: 2px solid white;
     font-size: 165%;
     font-weight: bold;
     letter-spacing: 0px;
-    /* font-family: "Console"*/;
     height: 30px;
     border-radius: 7px;
 }
@@ -494,37 +1038,32 @@ div.titlebox span.number:after {
     color: black
 }
 
-/*Animated Accordian Style Menus*/
-.side table thead {
-    display: none
-}
-.side table tbody tr td {
-    display: block;
-    border: none;
-}
-.side table tbody tr td:first-child {
-    background-color: #2C3E50;
+/*===========Animated Accordian Style Menus Recode by dziban==============*/
+
+.side .md h4 {
+    background: #2C3E50;
     color: #f2f2f2;
-    cursor: pointer;
-    padding: 7px;
-    width: 253px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 5px;
+    text-decoration: none;
+    text-align:center;
 }
-.side table tbody tr td:last-child {
+.side .md h4 + ul {
     margin: 0;
-    overflow: auto;
-    width: 253px;
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 1s ease;
+    padding: 0;
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
 }
-.side table tbody tr:hover td:last-child {
-    max-height: 150px
+.side .md h4 + ul li {
+    margin: 5px;
 }
-.side table tbody tr td:first-child a {
-    color: #FFFFFF
-}
-.side table tbody tr td code {
-    font-size: 1.1em
+.side .md h4:hover + ul,
+.side .md h4 + ul:hover {
+    max-height: 500px;
 }
 
 /*===============Posts===============*/
@@ -669,6 +1208,8 @@ form.leavemoderator-button {
     display: block;
 }
 .comment .md h5+h6+h4:after {
+    font-size: 90%;
+    font-style: italic;
     content: "Autowikibot post. Hover to view";
 }
 .comment .md:hover h5+h6+h4:after {
@@ -679,36 +1220,294 @@ content: ""
 
 /*===============FLAIR===============*/
 /* flair toggle */
-form.toggle.flairtoggle {
+form.toggle.flairtoggle,
+form.toggle.sr_style_toggle {
     background: transparent;
     color: black;
 }
-/* special flairs*/
-.flair-cno {
-    background-color: gold;
-    border-color: navy;
+
+/* ====== Global flair settings ====== */
+.flair {
+    font-variant:small-caps;
+    letter-spacing: 0.25px;
+    margin-left: .5em;
+    background: -moz-linear-gradient(top,  #000080 0%, #7f7fbf 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #000080 0%,#7f7fbf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #000080 0%,#7f7fbf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #000080 0%,#7f7fbf 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #000080 0%,#7f7fbf 100%); /* W3C */
+}
+.flair:hover:after {
+    border-radius: 3px;
+}
+
+/* ====== link flair ====== */
+
+.linkflair-album .linkflairlabel {
+    background: navy;
+
+    border-color: #A9AFB9;
     border-style: solid double;
     border-width: 1px 5px;
-    color: navy;
+    color: WhiteSmoke;
+    text-shadow: 2px 2px 1px #262626;
     border-radius: 4px;
     cursor: help;
     font-weight: bold;
+    box-shadow: 2px 2px 5px #363940;
 }
-.flair-cno:hover:after {
-    content: "Chief of Naval Operations - ⚓Moderator⚓";
+
+.linkflair-oc .linkflairlabel {
+    background: navy;
+    border-color: #A9AFB9;
+    border-style: solid double;
+    border-width: 1px 5px;
+    color: gold;
+    text-shadow: 2px 2px 1px #262626;
+    border-radius: 4px;
+    cursor: help;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #363940;
+}
+
+.linkflair-art .linkflairlabel {
+    background: navy;
+    border-color: gold;
+    border-style: solid double;
+    border-width: 1px 5px;
+    color: #cccccc;
+    text-shadow: 2px 2px 1px #262626;
+    border-radius: 4px;
+    cursor: help;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #363940;
+}
+
+.linkflair-info .linkflairlabel {
+    background: -webkit-linear-gradient(left, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: linear-gradient(to right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: -o-linear-gradient(right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: -moz-linear-gradient(right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background-color: white; 
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test .linkflairlabel {
+    background: #ffd700;
+    background: -moz-linear-gradient(left, #ffef99 0%, #ffd700 50%, #ccac00 51%, #e6c200 100%);
+    background: -webkit-linear-gradient(left, #ffef99 0%,#ffd700 50%,#ccac00 51%,#e6c200 100%);
+    background: linear-gradient(to right, #ffef99 0%,#ffd700 50%,#ccac00 51%,#e6c200 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test2 .linkflairlabel {
+    background: #ffd700;
+    background: -moz-linear-gradient(top, #ffef99 0%, #ffd700 50%, #ccac00 51%, #e6c200 100%);
+    background: -webkit-linear-gradient(top, #ffef99 0%,#ffd700 50%,#ccac00 51%,#e6c200 100%);
+    background: linear-gradient(to bottom, #ffef99 0%,#ffd700 50%,#ccac00 51%,#e6c200 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test3 .linkflairlabel {
+    background: #ffd700;    
+    background: -webkit-linear-gradient(left, rgba(255, 215, 0, .2) 10%, rgba(255, 215, 0, .7) 20%, rgba(255, 215, 0, 1) 50%, rgba(255, 215, 0, .7) 70%, rgba(255, 215, 0, .2) 85%); 
+    background: -o-linear-gradient(right, rgba(255, 215, 0, .2) 10%, rgba(255, 215, 0, .7) 20%, rgba(255, 215, 0, 1) 50%, rgba(255, 215, 0, .7) 70%, rgba(255, 215, 0, .2) 85%); 
+    background: -moz-linear-gradient(right, rgba(255, 215, 0, .2) 10%, rgba(255, 215, 0, .7) 20%, rgba(255, 215, 0, 1) 50%, rgba(255, 215, 0, .7) 70%, rgba(255, 215, 0, .2) 85%); 
+    background: linear-gradient(to right, rgba(255, 215, 0, .2) 10%, rgba(255, 215, 0, .7) 20%, rgba(255, 215, 0, 1) 50%, rgba(255, 215, 0, .7) 70%, rgba(255, 215, 0, .2) 85%); 
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test4 .linkflairlabel {    
+    background: -webkit-linear-gradient(left, #CCAC00 0%,#E6C200 20%, rgba(230, 194, 0, 0) 25%, #E6C200 30%, #FFD700 45%, rgba(230, 194, 0, 0) 50%, #FFD700 55%,#E6C200 70%, rgba(230, 194, 0, 0) 75%, #E6C200 80%, #CCAC00 100%);
+    background: -o-linear-gradient(right, #CCAC00 0%,#E6C200 20%, rgba(230, 194, 0, 0) 25%, #E6C200 30%, #FFD700 45%, rgba(230, 194, 0, 0) 50%, #FFD700 55%,#E6C200 70%, rgba(230, 194, 0, 0) 75%, #E6C200 80%, #CCAC00 100%);
+    background: -moz-linear-gradient(right, #CCAC00 0%,#E6C200 20%, rgba(230, 194, 0, 0) 25%, #E6C200 30%, #FFD700 45%, rgba(230, 194, 0, 0) 50%, #FFD700 55%,#E6C200 70%, rgba(230, 194, 0, 0) 75%, #E6C200 80%, #CCAC00 100%);
+    background: linear-gradient(to right, #CCAC00 0%,#E6C200 20%, rgba(230, 194, 0, 0) 25%, #E6C200 30%, #FFD700 45%, rgba(230, 194, 0, 0) 50%, #FFD700 55%,#E6C200 70%, rgba(230, 194, 0, 0) 75%, #E6C200 80%, #CCAC00 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test5 .linkflairlabel {    
+    background: -webkit-linear-gradient(left, #CCAC00 0%,#E6C200 20%, #5e8fbd 25%, #E6C200 30%, #FFD700 45%, #5e8fbd 50%, #FFD700 55%,#E6C200 70%, #5e8fbd 75%, #E6C200 80%, #CCAC00 100%);
+    background: -o-linear-gradient(right, #CCAC00 0%,#E6C200 20%, #5e8fbd 25%, #E6C200 30%, #FFD700 45%, #5e8fbd 50%, #FFD700 55%,#E6C200 70%, #5e8fbd 75%, #E6C200 80%, #CCAC00 100%);
+    background: -moz-linear-gradient(right, #CCAC00 0%,#E6C200 20%, #5e8fbd 25%, #E6C200 30%, #FFD700 45%, #5e8fbd 50%, #FFD700 55%,#E6C200 70%, #5e8fbd 75%, #E6C200 80%, #CCAC00 100%);
+    background: linear-gradient(to right, #CCAC00 0%,#E6C200 20%, #5e8fbd 25%, #E6C200 30%, #FFD700 45%, #5e8fbd 50%, #FFD700 55%,#E6C200 70%, #5e8fbd 75%, #E6C200 80%, #CCAC00 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test6 .linkflairlabel {    
+    background: -webkit-linear-gradient(left, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: -o-linear-gradient(right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: -moz-linear-gradient(right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: linear-gradient(to right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+    cursor: help;
+}
+
+.linkflair-test7 .linkflairlabel {   
+    background: linear-gradient(to right, #000080 0%, #323299 18%, red 25%,#323299 32%,#000080 45%, white 50%,#000080 55%, #323299 68%, lime 75%,#323299 82%, #000080 100%); /* W3C */
+    font-variant:small-caps;
+    letter-spacing: 0.25px;
+    margin-left: .5em;
+    background-color: navy;
+    border-color:white;
+    border-style: ridge;
+    border-width: 2px 3px;
+    border-radius: 3px;
+    cursor: help;
+    color: yellow;
+    font-weight:bold;
+}
+
+.linkflair-error .linkflairlabel {
+    background: #ef473a;
+    background: -moz-linear-gradient(left, #ee0979 0%,#ff6a00 50%, #ee0979 100%);
+    background: -webkit-linear-gradient(left, #ee0979 0%,#ff6a00 50%, #ee0979 100%);
+    background: linear-gradient(to right, #ee0979 0%,#ff6a00 50%, #ee0979 100%);
+    border-color: navy;
+    border-style: solid;
+    border-width: 1px 5px;
+    color: yellow;
+    text-shadow: 2px 2px 1px #262626;
+    border-radius: 4px;
+    cursor: no-drop;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #363940;
+}
+
+/* ====== Mod Flairs ====== */
+/* dziban's flair */
+.flair-cno {
+    background: -webkit-linear-gradient(left, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: -o-linear-gradient(right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: -moz-linear-gradient(right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%);
+    background: linear-gradient(to right, #CCAC00 0%,#E6C200 22%, #5e8fbd 25%, #E6C200 28%, #FFD700 47%, #5e8fbd 50%, #FFD700 53%,#E6C200 72%, #5e8fbd 75%, #E6C200 78%, #CCAC00 100%); 
+    border-color: navy;
+    border-style: solid double;
+    border-width: 1px 5px;
+    color: navy; /*WhiteSmoke;*/
+    text-shadow: 1px 1px 1px rgba(15,85,202,.7) !important;
+    border-radius: 4px;
+    cursor: help;
+    font-weight: bold; 
+/*    font-size: 10pt; */
+    box-shadow: 2px 2px 5px #363940;
+}
+
+/* Idiotic flair animation for dziban - following two lines go up above*/
+/*
+    animation:fade 15s ease-in-out infinite;
+    -webkit-animation:fade 15s ease-in-out infinite;
+*/  
+/* keyframes used to be    50% { opacity:0; } */
+/*
+@keyframes fade {
+    0% { opacity:1; text-shadow: none; transform:none; }
+    35% { transform:scale(.85,.85); }
+    50% { opacity:0; text-shadow: 5px 20px 6px black; transform:scale(0.4,0.4); }
+    100% { opacity:1; text-shadow: none; transform:none; }
+}
+@-webkit-keyframes fade {
+    0% { opacity:1; text-shadow: none; transform:none; }
+    35% { transform:scale(.85,.85); }
+    50% { opacity:0; text-shadow: 5px 20px 6px black; transform:scale(0.4,0.4); }
+    100% { opacity:1; text-shadow: none; transform:none; }
+}*/
+
+
+.flair-cno:hover:before {
+    content: "Chief of Navel Operations ( ͡° ͜ʖ ͡°)";    /* notepad++ squares should paste as anchors but doublecheck */
+    font-size:9pt;
+    font-weight:bold;
+    text-shadow: none;
     z-index: 9999;
     background-color: #FFFDCC;
     margin-left: 5px;
-    color: black;
+    color: navy;
     position: absolute;
-    cursor: help;
     border: 1px solid #E1B000;
+    border-radius: 3px;
+    -webkit-animation: fade ease-in .7s; /* Chrome, Safari, Opera */
+    animation: fade ease-in .7s;
 }
+@keyframes fade {
+    0% { opacity:0; background-color: #4A4700; text-shadow: none; transform:scale(.85,.85); color: #BEBEFF; }
+    35% { transform:scale(.90,.90); background-color: #8A8755; color:#9797cc; }
+    50% { opacity:.5; text-shadow: 5px 20px 6px #3366DD;}
+    100% { opacity:1; text-shadow: none; transform:none; color:navy; }
+}
+@-webkit-keyframes fade {
+    0% { opacity:0; background-color: #4A4700; text-shadow: none; transform:scale(.85,.85); color: #BEBEFF; }
+    35% { transform:scale(.90,.90); background-color: #8A8755; color:#9797cc; }
+    50% { opacity:.5; text-shadow: 5px 20px 6px #3366DD;}
+    100% { opacity:1; text-shadow: none; transform:none; color:navy; }
+}
+
+/* Other mods flair */
 .flair-cinclantflt,
 .flair-jimdandy,
-.flair-kimjong,
-.flair-ngt {
-    background-color: gold;
+.flair-wholeein,
+.flair-cmc, 
+.flair-automod,
+.flair-3rd,
+.flair-kurt {
+    background: -webkit-linear-gradient(left, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 70%, #CCAC00 85%); 
+    background: -o-linear-gradient(right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 70%, #CCAC00 85%); 
+    background: -moz-linear-gradient(right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 70%, #CCAC00 85%); 
+    background: linear-gradient(to right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 70%, #CCAC00 85%); 
     border-color: navy;
     border-style: solid double;
     border-width: 1px 5px;
@@ -716,9 +1515,35 @@ form.toggle.flairtoggle {
     color: navy;
     cursor: help;
     font-weight: bold;
+    box-shadow: 1px 1px 5px 2px #363940;
 }
-.flair-cinclantflt:hover:after {
-    content: "Commander in Chief, Atlantic Fleet - ⚓Moderator⚓";
+
+.flair-cinclantflt:hover:before,
+.flair-jimdandy:hover:before,
+.flair-wholeein:hover:before,
+.flair-cmc:hover:before,
+.flair-automod:hover:before,
+.flair-3rd:hover:before,
+.flair-kurt:hover:before,
+.flair-vepr:hover:before,
+.flair-dread:hover:after,
+.flair-top:hover:after,
+.flair-ama:hover:after,
+.flair-commenter:hover:after {
+    opacity:1;
+}
+
+.flair-cinclantflt:before,
+.flair-jimdandy:before,
+.flair-cmc:before,
+.flair-wholeein:before,
+.flair-automod:before,
+.flair-3rd:before,
+.flair-kurt:before,
+.flair-vepr:before {
+    opacity:0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     z-index: 9999;
     background-color: #FFFDCC;
     margin-left: 5px;
@@ -727,38 +1552,102 @@ form.toggle.flairtoggle {
     cursor: help;
     border: 1px solid #E1B000;
 }
-.flair-jimdandy:hover:after {
+
+.flair-cinclantflt:before {
+	content: "CinC, Atlantic Fleet - ⚓Moderator⚓"; 
+}
+.flair-jimdandy:before {
     content: "First Sea Lord - ⚓Moderator⚓";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
+}
+.flair-cmc:before {  
+    content: "✶Moderator✶";
+}
+.flair-wholeein:before {
+    content: "⚓Moderator⚓";
+}
+.flair-automod:before {  
+    content: "✶Robot Moderator✶"; 
+}
+.flair-3rd:before {
+    content: "I Didn't Choose The Tug Lyfe... ⚓Moderator⚓";
+}
+
+/* 
+.flair-kurt {
+    background: -webkit-linear-gradient(left, #5e8fbd, #85b3d4, #5e8fbd);  i'm calling #5e8fbd "dungaree blue" 
+    background: -o-linear-gradient(right, #5e8fbd, #85b3d4, #5e8fbd); 
+    background: -moz-linear-gradient(right, #5e8fbd, #85b3d4, #5e8fbd); 
+    background: linear-gradient(to right, #5e8fbd, #85b3d4, #5e8fbd); 
+    border: solid #FFD700 ; 
+    border-width: 1px 3px;
+    cursor: help;
+    color: #F5FFFA ; 
+}
+*/
+
+.flair-kurt:before {
+    content: "Squid Fancy - ⚓Moderator⚓";
+}
+
+.flair-vepr {
+    background: -webkit-linear-gradient(left, #990000, #B20000, red, #B20000, #990000);
+    background: -o-linear-gradient(right, #990000, #B20000, red, #B20000, #990000);
+    background: -moz-linear-gradient(right, #990000, #B20000, red, #B20000, #990000);
+    background: linear-gradient(to right, #990000, #B20000, red, #B20000, #990000);
+    border-style: solid double;
+    border-width: 1px 5px;
+    border-radius: 4px;
+    border-color: #FFD700;
+    cursor: help;
+    color: gold;
+    letter-spacing: 0.5px;
+    font-weight:bold;
+    box-shadow: 1px 1px 5px 2px #363940;
+}
+.flair-vepr:before {  
+    content: "Resident Submarine Expert - ⚓Moderator⚓"; 
+    background-color: #FFA988; 
+    color: rgba(64,0,0,1); 
+    border: 1px solid #FF0000; 
+}
+
+/*==== non-mod special flairs ====*/
+.flair-dread {
+    margin-left: .5em;
+    line-height: 130%;
+    background: -webkit-linear-gradient(left, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: linear-gradient(to right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: -o-linear-gradient(right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background: -moz-linear-gradient(right, WhiteSmoke 10%, azure 20%, ivory 50%, seashell 70%, floralwhite 85%); 
+    background-color: white;
+    border-color: navy;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px #363940;
+    color: navy;
+    cursor: help;
+    font-weight: bold;
+}
+.flair-dread:after {  
+    opacity:0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
+    content: "Hi-Res Dichromatic WarshipPorn"; 
+    z-index: 9999; 
+    background-color: #FFFDCC; 
+    margin-left: 5px; 
+    color: black; 
     position: absolute;
     cursor: help;
-    border: 1px solid #E1B000;
+    border: 1px solid #E1B000; 
 }
-.flair-kimjong:hover:after {
-    content: "Forever known as HMS Cockchafer - ⚓Moderator⚓";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    cursor: help;
-    border: 1px solid #E1B000;
-}
-.flair-ngt:hover:after {
-    content: "Naval Sea Systems Command - ⚓Moderator⚓";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    cursor: help;
-    border: 1px solid #E1B000;
-}
+
 .flair-top {
-    background-color:gold;
+    background: -webkit-linear-gradient(left, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 80%, #CCAC00 90%); 
+    background: -o-linear-gradient(right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 80%, #CCAC00 90%); 
+    background: -moz-linear-gradient(right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 80%, #CCAC00 90%); 
+    background: linear-gradient(to right, #CCAC00 10%, #E6C200 20%, #FFD700 50%, #E6C200 80%, #CCAC00 90%); 
     border-color: navy;
     border-style: solid dotted;
     border-width: 1px 2px;
@@ -767,7 +1656,10 @@ form.toggle.flairtoggle {
     cursor: help;
     font-weight:bold;
 }
-.flair-top:hover:after {  
+.flair-top:after {  
+    opacity:0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
     content: "Top Poster - 200+ Submissions!"; 
     z-index: 9999; 
     background-color: #FFFDCC; 
@@ -777,51 +1669,19 @@ form.toggle.flairtoggle {
     cursor: help;
     border: 1px solid #E1B000; 
 }
-.flair-plankowner {
-    background-color:navy;
-    border: solid #FFD700;
+
+.flair-wiki {
+    background: -webkit-linear-gradient(left, #5e8fbd, #85b3d4, #5e8fbd); /* i'm calling #5e8fbd "dungaree blue" */
+    background: -o-linear-gradient(right, #5e8fbd, #85b3d4, #5e8fbd); 
+    background: -moz-linear-gradient(right, #5e8fbd, #85b3d4, #5e8fbd); 
+    background: linear-gradient(to right, #5e8fbd, #85b3d4, #5e8fbd); 
+    border: solid #FFD700 ; 
     border-width: 1px 3px;
     cursor: help;
-    color: gold;
+    color: #F5FFFA ; /* MintCream */
 }
-.flair-plankowner:hover:after {  
-    content: "Plankowner"; 
-    z-index: 9999; 
-    background-color: #FFFDCC; 
-    margin-left: 5px; 
-    color: black; 
-    position: absolute;
-    border: 1px solid #E1B000; 
-}
-.flair-cmc {
-    background-color:gold;
-    border-color: navy;
-    border-style: solid double;
-    border-width: 1px 5px;
-    color: navy;
-    border-radius: 4px;
-    cursor: help;   
-    font-weight:bold;
-}
-.flair-cmc:hover:after {  
-    content: "Master-at-Arms/Shore Patrol - ✶Moderator✶"; 
-    z-index: 9999; 
-    background-color: #FFFDCC; 
-    margin-left: 5px; 
-    color: black; 
-    position: absolute;
-    cursor: help;
-    border: 1px solid #E1B000; 
-}
-.flair-vepr {
-    background-color: #FF0000;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    cursor: help;
-    color: gold;
-}
-.flair-vepr:hover:after {  
-    content: "Official WarshipPorn Submarine Expert"; 
+.flair-wiki:hover:after {  
+    content: "Wiki/FAQ Contributor"; 
     z-index: 9999; 
     background-color: #FFFDCC; 
     margin-left: 5px; 
@@ -830,7 +1690,70 @@ form.toggle.flairtoggle {
     border: 1px solid #E1B000; 
 }
 
-/* ww2 flairs*/
+/* AMA flairs */
+.flair-ama {
+    background: -moz-linear-gradient(top,  #bebebe 0%, #acacac 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top, #bebebe 0%, #acacac 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #bebebe 0%, #acacac 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #bebebe 0%, #acacac 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #bebebe 0%,#acacac 100%); /* W3C */
+	background-color: #bebebe;
+    border: solid grey;
+    border-width: 1px 2px;
+    border-radius: 2px;    
+    cursor: help;
+    color: yellow;
+    text-shadow: 0px 0px 3px blue !important;
+    box-shadow: 2px 2px 5px 2px #363940;
+}
+
+.flair-ama:after {
+    opacity:0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
+    content: "Was Asked Anything";
+    z-index: 9999;
+    background-color: #FFFDCC;
+    margin-left: 5px;
+    color: black;
+    position: absolute;
+    cursor: help;
+    text-shadow: none;
+    border: 1px solid #E1B000;
+}
+
+/* Commenter flairs */
+.flair-commenter {
+    background: -moz-linear-gradient(top, rgba(248,248,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(248,248,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(248,248,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-color: rgba(248,248,255,1); /*ghostwhite; #f8f8ff; 248,248,255 */
+    border: solid #cc7722;
+    border-width: 1px 2px;
+    border-radius: 2px;    
+    font-weight: bold;
+    cursor: help;
+    color: #B76B1E;
+    text-shadow: 0px 0px 2px #d6924e !important;
+    box-shadow: 2px 2px 5px 2px #363940; 
+}
+
+.flair-commenter:after {
+    opacity:0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; /* Safari 3.1 to 6.0 */
+    content: "Excellent Commenter";
+    z-index: 9999;
+    background-color: #FFFDCC;
+    margin-left: 5px;
+    color: black;
+    position: absolute;
+    cursor: help;
+    text-shadow: none;
+    border: 1px solid #E1B000;
+}
+
+/* user flairs*/
 
 .flair-dinghy {
     background-color:black;
@@ -839,999 +1762,41 @@ form.toggle.flairtoggle {
     cursor: help;
     color: white;
 }
-.flair-dinghy:hover:after {
-    content: "Dinghies, Narcosubs, Bathtubs, &c.";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-pt {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-pt:hover:after {
-    content: "PT Boat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ff {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ff:hover:after {
-    content: "Frigate/Gunboat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-de {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-de:hover:after {
-    content: "Destroyer Escort";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-dd {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-dd:hover:after {
-    content: "Destroyer";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cl {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-cl:hover:after {
-    content: "Light Cruiser";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ca {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-ca:hover:after {
-    content: "Heavy Cruiser";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cb {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-cb:hover:after {
-    content: "Battlecruiser";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb1 {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-bb1:hover:after {
-    content: "Dreadnaught";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb2 {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-bb2:hover:after {
-    content: "Treaty Battleship";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb3 {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-bb3:hover:after {
-    content: "Fast Battleship";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cve {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-cve:hover:after {
-    content: "Escort Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cvl {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-cvl:hover:after {
-    content: "Light Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cva {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    color: silver;
-    cursor: help;
-}
-.flair-cva:hover:after {
-    content: "Fleet Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-
-/* ww2 flair for plankowners*/
-.flair-pt-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-pt-po:hover:after {
-    content: "PT Boat - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ff-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ff-po:hover:after {
-    content: "Frigate - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-de-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-de-po:hover:after {
-    content: "Destroyer Escort - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-dd-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-dd-po:hover:after {
-    content: "Destroyer - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cl-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cl-po:hover:after {
-    content: "Light Cruiser - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ca-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ca-po:hover:after {
-    content: "Heavy Cruiser - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cb-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cb-po:hover:after {
-    content: "Battlecruiser - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb1-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-bb1-po:hover:after {
-    content: "Dreadnaught - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb2-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-bb2-po:hover:after {
-    content: "Treaty Battleship - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-bb3-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-bb3-po:hover:after {
-    content: "Fast Battleship - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cve-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cve-po:hover:after {
-    content: "Escort Carrier- Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cvl-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cvl-po:hover:after {
-    content: "Light Carrier - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cva-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cva-po:hover:after {
-    content: "Fleet Carrier - Plankowner";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-
-/*modern flair */
-.flair-pm {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-pm:hover:after {
-    content: "Missile Boat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-pc {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-pc:hover:after {
-    content: "Coastal Patrol Boat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-kg {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-kg:hover:after {
-    content: "Corvette";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ffg {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ffg:hover:after {
-    content: "Guided Missile Frigate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssk {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ssk:hover:after {
-    content: "Attack Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ddg {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ddg:hover:after {
-    content: "Guided Missile Destroyer";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssn {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ssn:hover:after {
-    content: "Nuclear Attack Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cg {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-cg:hover:after {
-    content: "Guided Missile Cruiser";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssgn {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ssgn:hover:after {
-    content: "Guided Missile Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-lhd {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-lhd:hover:after {
-    content: "Helicopter Assault Ship";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cv {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-cv:hover:after {
-    content: "Aircraft Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cvn {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-cvn:hover:after {
-    content: "Nuclear Powered Aircraft Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssbn {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ssbn:hover:after {
-    content: "Ballistic Missile Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-
-/*modern flair plankowner/special */
-.flair-pm-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-pm-po:hover:after {
-    content: "Missile Boat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-pc-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-pc-po:hover:after {
-    content: "Coastal Patrol Boat";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-kg-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-kg-po:hover:after {
-    content: "Corvette";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ffg-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ffg-po:hover:after {
-    content: "Guided Missile Frigate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssk-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ssk-po:hover:after {
-    content: "Attack Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ddg-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ddg-po:hover:after {
-    content: "Guided Missile Destroyer";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssn-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ssn-po:hover:after {
-    content: "Nuclear Attack Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cg-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cg-po:hover:after {
-    content: "Guided Missile Cruiser";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssgn-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ssgn-po:hover:after {
-    content: "Guided Missile Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-lhd-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-lhd-po:hover:after {
-    content: "Helicopter Assault Ship";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cv-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cv-po:hover:after {
-    content: "Aircraft Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-cvn-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-cvn-po:hover:after {
-    content: "Nuclear Powered Aircraft Carrier";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ssbn-po {
-    background-color: navy;
-    border: solid #FFD700;
-    border-width: 1px 3px;
-    color: gold;
-    cursor: help;
-}
-.flair-ssbn-po:hover:after {
-    content: "Ballistic Missile Submarine";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-
-/* age of sail flair*/
-.flair-cu {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-cu:hover:after {
-    content: "Cutter";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-gb {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-gb:hover:after {
-    content: "Gun-Brig";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-sw {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-sw:hover:after {
-    content: "Sloop-of-War";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-ps {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-ps:hover:after {
-    content: "Corvette/Post Ship";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-fr {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-fr:hover:after {
-    content: "Frigate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-hf {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-hf:hover:after {
-    content: "Heavy Frigate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-4r {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-4r:hover:after {
-    content: "Fourth Rate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-3r {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-3r:hover:after {
-    content: "Third Rate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
-.flair-2r {
-    background-color: navy;
-    border: solid white;
-    border-width: 1px;
-    cursor: help;
-    color: silver;
-}
-.flair-2r:hover:after {
-    content: "Second Rate";
-    z-index: 9999;
-    background-color: #FFFDCC;
-    margin-left: 5px;
-    color: black;
-    position: absolute;
-    border: 1px solid #E1B000;
-}
+.flair-pt, /* WWII */
+.flair-ff,
+.flair-de,
+.flair-dd,
+.flair-cl,
+.flair-ca,
+.flair-cb,
+.flair-bb1,
+.flair-bb2,
+.flair-bb3,
+.flair-cve,
+.flair-cvl,
+.flair-cva,
+.flair-pm, /* Modern */
+.flair-pc,
+.flair-kg,
+.flair-ffg,
+.flair-ssk,
+.flair-ddg,
+.flair-ssn,
+.flair-cg,
+.flair-ssgn,
+.flair-lhd,
+.flair-cv,
+.flair-cvn,
+.flair-ssbn,
+.flair-cu, /* Age of Sail */
+.flair-gb,
+.flair-sw,
+.flair-ps,
+.flair-fr,
+.flair-hf,
+.flair-4r,
+.flair-3r,
+.flair-2r,
 .flair-1r {
     background-color: navy;
     border: solid white;
@@ -1839,8 +1804,44 @@ form.toggle.flairtoggle {
     cursor: help;
     color: silver;
 }
+
+.flair-dinghy:hover:after, /* Generic */
+.flair-pt:hover:after, /* WWII */
+.flair-ff:hover:after,
+.flair-de:hover:after,
+.flair-dd:hover:after,
+.flair-cl:hover:after,
+.flair-ca:hover:after,
+.flair-cb:hover:after,
+.flair-bb1:hover:after,
+.flair-bb2:hover:after,
+.flair-bb3:hover:after,
+.flair-cve:hover:after,
+.flair-cvl:hover:after,
+.flair-cva:hover:after,
+.flair-pm:hover:after, /* Modern */
+.flair-pc:hover:after,
+.flair-kg:hover:after,
+.flair-ffg:hover:after,
+.flair-ssk:hover:after,
+.flair-ddg:hover:after,
+.flair-ssn:hover:after,
+.flair-cg:hover:after,
+.flair-ssgn:hover:after,
+.flair-lhd:hover:after,
+.flair-cv:hover:after,
+.flair-cvn:hover:after,
+.flair-ssbn:hover:after,
+.flair-cu:hover:after, /* Age of Sail */
+.flair-gb:hover:after,
+.flair-sw:hover:after,
+.flair-ps:hover:after,
+.flair-fr:hover:after,
+.flair-hf:hover:after,
+.flair-4r:hover:after,
+.flair-3r:hover:after,
+.flair-2r:hover:after,
 .flair-1r:hover:after {
-    content: "First Rate";
     z-index: 9999;
     background-color: #FFFDCC;
     margin-left: 5px;
@@ -1849,9 +1850,413 @@ form.toggle.flairtoggle {
     border: 1px solid #E1B000;
 }
 
-/* age of sail po/special flair -- not done. Will do if/when necessary */
-
-/* Changes ALL flair text */
-.flair {
-    margin-left: .5em
+/* WWII flair */
+.flair-pt:hover:after {
+    content: "PT Boat 5+ posts";
 }
+.flair-ff:hover:after {
+    content: "Frigate/Gunboat 10+ posts";
+}
+.flair-de:hover:after {
+    content: "Destroyer Escort 20+ posts";
+}
+.flair-dd:hover:after {
+    content: "Destroyer 30+ posts";
+}
+.flair-cl:hover:after {
+    content: "Light Cruiser 40+ posts";
+}
+.flair-ca:hover:after {
+    content: "Heavy Cruiser 50+ posts";
+}
+.flair-cb:hover:after {
+    content: "Battlecruiser 65+ posts";
+}
+.flair-bb1:hover:after {
+    content: "Dreadnought 80+ posts";
+}
+.flair-bb2:hover:after {
+    content: "Treaty Battleship 95+ posts";
+}
+.flair-bb3:hover:after {
+    content: "Fast Battleship 110+ posts";
+}
+.flair-cve:hover:after {
+    content: "Escort Carrier 130+ posts";
+}
+.flair-cvl:hover:after {
+    content: "Light Carrier 150+ posts";
+}
+.flair-cva:hover:after {
+    content: "Fleet Carrier 175+ posts!";
+}
+.flair-dinghy:hover:after {
+    content: "Dinghies, Narcosubs, Bathtubs, &c.";
+}
+/* modern flair */
+.flair-pm:hover:after {
+    content: "Missile Boat - 5+ posts";
+}
+.flair-pc:hover:after {
+    content: "Coastal Patrol Boat - 10+ posts";
+}
+.flair-kg:hover:after {
+    content: "Corvette - 20+ posts";
+}
+.flair-ffg:hover:after {
+    content: "Guided Missile Frigate - 30+ posts";
+}
+.flair-ssk:hover:after {
+    content: "Attack Submarine - 40+ posts";
+}
+.flair-ddg:hover:after {
+    content: "Guided Missile Destroyer - 50+ posts";
+}
+.flair-ssn:hover:after {
+    content: "Nuclear Attack Submarine - 65+ posts";
+}
+.flair-cg:hover:after {
+    content: "Guided Missile Cruiser - 80+ posts";
+}
+.flair-ssgn:hover:after {
+    content: "Guided Missile Submarine - 95+ posts";
+}
+.flair-lhd:hover:after {
+    content: "Helicopter Assault Ship - 110+ posts";
+}
+.flair-cv:hover:after {
+    content: "Aircraft Carrier - 130+ posts";
+}
+.flair-cvn:hover:after {
+    content: "Nuclear Powered Aircraft Carrier - 155+ posts";
+}
+.flair-ssbn:hover:after {
+    content: "Ballistic Missile Submarine - 180+ posts!";
+}
+/* age of sail flair */
+.flair-cu:hover:after {
+    content: "Cutter - 5+ posts";
+}
+.flair-gb:hover:after {
+    content: "Gun-Brig - 10+ posts";
+}
+.flair-sw:hover:after {
+    content: "Sloop-of-War - 20+ posts";
+}
+.flair-ps:hover:after {
+    content: "Corvette/Post Ship - 30+ posts";
+}
+.flair-fr:hover:after {
+    content: "Frigate - 45+ posts";
+}
+.flair-hf:hover:after {
+    content: "Heavy Frigate - 60+ posts";
+}
+.flair-4r:hover:after {
+    content: "Fourth Rate - 80+ posts";
+}
+.flair-3r:hover:after {
+    content: "Third Rate - 100+ posts";
+}
+.flair-2r:hover:after {
+    content: "Second Rate - 130+ posts";
+}
+.flair-1r:hover:after {
+    content: "First Rate - 160+ posts!";
+}
+
+/* plankowners */
+.flair-plankowner, /* Generic */
+.flair-pt-po, /* WWII */
+.flair-ff-po,
+.flair-de-po,
+.flair-dd-po,
+.flair-cl-po,
+.flair-ca-po,
+.flair-cb-po,
+.flair-bb1-po,
+.flair-bb2-po,
+.flair-bb3-po,
+.flair-cve-po,
+.flair-cvl-po,
+.flair-cva-po,
+.flair-pm-po, /* Modern */
+.flair-pc-po,
+.flair-kg-po,
+.flair-ffg-po,
+.flair-ssk-po,
+.flair-ddg-po,
+.flair-ssn-po,
+.flair-cg-po,
+.flair-ssgn-po,
+.flair-lhd-po,
+.flair-cv-po,
+.flair-cvn-po,
+.flair-ssbn-po,
+.flair-cu-po, /* Age of Sail */
+.flair-gb-po,
+.flair-sw-po,
+.flair-ps-po,
+.flair-fr-po,
+.flair-hf-po,
+.flair-4r-po,
+.flair-3r-po,
+.flair-2r-po,
+.flair-1r-po {
+    background-color: navy;
+    border: solid #FFD700;
+    border-width: 1px 3px;
+    color: gold;
+    cursor: help;
+}
+
+.flair-plankowner:hover:after, /* Generic */
+.flair-pt-po:hover:after, /* WWII */
+.flair-ff-po:hover:after,
+.flair-de-po:hover:after,
+.flair-dd-po:hover:after,
+.flair-cl-po:hover:after,
+.flair-ca-po:hover:after,
+.flair-cb-po:hover:after,
+.flair-bb1-po:hover:after,
+.flair-bb2-po:hover:after,
+.flair-bb3-po:hover:after,
+.flair-cve-po:hover:after,
+.flair-cvl-po:hover:after,
+.flair-cva-po:hover:after,
+.flair-pm-po:hover:after, /* Modern */
+.flair-pc-po:hover:after,
+.flair-kg-po:hover:after,
+.flair-ffg-po:hover:after,
+.flair-ssk-po:hover:after,
+.flair-ddg-po:hover:after,
+.flair-ssn-po:hover:after,
+.flair-cg-po:hover:after,
+.flair-ssgn-po:hover:after,
+.flair-lhd-po:hover:after,
+.flair-cv-po:hover:after,
+.flair-cvn-po:hover:after,
+.flair-ssbn-po:hover:after,
+.flair-cu-po:hover:after, /* Age of Sail */
+.flair-gb-po:hover:after,
+.flair-sw-po:hover:after,
+.flair-ps-po:hover:after,
+.flair-fr-po:hover:after,
+.flair-hf-po:hover:after,
+.flair-4r-po:hover:after,
+.flair-3r-po:hover:after,
+.flair-2r-po:hover:after,
+.flair-1r-po:hover:after  {
+    z-index: 9999;
+    background-color: #FFFDCC;
+    margin-left: 5px;
+    color: black;
+    position: absolute;
+    border: 1px solid #E1B000;
+}
+
+.flair-plankowner:hover:after {  
+    content: "Plankowner"; 
+}
+.flair-pt-po:hover:after {
+    content: "PT Boat - 5+ posts - Plankowner";	
+}
+.flair-ff-po:hover:after {
+    content: "Frigate - 10+ posts - Plankowner";
+}
+.flair-de-po:hover:after {
+    content: "Destroyer Escort - 20+ posts - Plankowner";
+}
+.flair-dd-po:hover:after {
+    content: "Destroyer - 30+ posts - Plankowner";
+}
+.flair-cl-po:hover:after {
+    content: "Light Cruiser - 40+ posts - Plankowner";
+}
+.flair-ca-po:hover:after {
+    content: "Heavy Cruiser - 50+ posts - Plankowner";
+}
+.flair-cb-po:hover:after {
+    content: "Battlecruiser - 65+ posts - Plankowner";
+}
+.flair-bb1-po:hover:after {
+    content: "Dreadnought - 80+ posts - Plankowner";
+}
+.flair-bb2-po:hover:after {
+    content: "Treaty Battleship - 95+ posts - Plankowner";
+}
+.flair-bb3-po:hover:after {
+    content: "Fast Battleship - 110+ posts - Plankowner";
+}
+.flair-cve-po:hover:after {
+    content: "Escort Carrier - 130+ posts - Plankowner";
+}
+.flair-cvl-po:hover:after {
+    content: "Light Carrier - 150+ posts - Plankowner";
+}
+.flair-cva-po:hover:after {
+    content: "Fleet Carrier - 175+ posts - Plankowner";
+}
+
+/*modern flair plankowner/special */
+
+.flair-pm-po:hover:after {
+    content: "Missile Boat - 5+ posts - Plankowner";
+}
+.flair-pc-po:hover:after {
+    content: "Coastal Patrol Boat - 10+ posts - Plankowner";
+}
+.flair-kg-po:hover:after {
+    content: "Corvette - 20+ posts - Plankowner";
+}
+.flair-ffg-po:hover:after {
+    content: "Guided Missile Frigate - 30+ posts - Plankowner";
+}
+.flair-ssk-po:hover:after {
+    content: "Attack Submarine - 40+ posts - Plankowner";
+}
+.flair-ddg-po:hover:after {
+    content: "Guided Missile Destroyer - 50+ posts - Plankowner";
+}
+.flair-ssn-po:hover:after {
+    content: "Nuclear Attack Submarine - 65+ posts - Plankowner";
+}
+.flair-cg-po:hover:after {
+    content: "Guided Missile Cruiser - 80+ posts - Plankowner";
+}
+.flair-ssgn-po:hover:after {
+    content: "Guided Missile Submarine - 95+ posts - Plankowner";
+}
+.flair-lhd-po:hover:after {
+    content: "Helicopter Assault Ship - 110+ posts - Plankowner";
+}
+.flair-cv-po:hover:after {
+    content: "Aircraft Carrier - 130+ posts - Plankowner";
+}
+.flair-cvn-po:hover:after {
+    content: "Nuclear Powered Aircraft Carrier - 155+ posts - Plankowner";
+}
+.flair-ssbn-po:hover:after {
+    content: "Ballistic Missile Submarine - 180+ posts! - Plankowner";
+}
+
+/* age of sail flair*/
+.flair-cu-po:hover:after {
+    content: "Cutter - 5+ posts - Plankowner";
+}
+.flair-gb-po:hover:after {
+    content: "Gun-Brig - 10+ posts - Plankowner";
+}
+.flair-sw-po:hover:after {
+    content: "Sloop-of-War - 20+ posts - Plankowner";
+}
+.flair-ps-po:hover:after {
+    content: "Corvette/Post Ship - 30+ posts - Plankowner";
+}
+.flair-fr-po:hover:after {
+    content: "Frigate - 45+ posts - Plankowner";
+}
+.flair-hf-po:hover:after {
+    content: "Heavy Frigate - 60+ posts - Plankowner";
+}
+.flair-4r-po:hover:after {
+    content: "Fourth Rate - 80+ posts - Plankowner";
+}
+.flair-3r-po:hover:after {
+    content: "Third Rate - 100+ posts - Plankowner";
+}
+.flair-2r-po:hover:after {
+    content: "Second Rate - 130+ posts - Plankowner";
+}
+.flair-1r-po:hover:after {
+    content: "First Rate - 160+ posts! - Plankowner";
+}
+
+#header {z-index:98}          /* Fix for broken banner image caused by a reddit change on 14 Jan 2015, per http://www.reddit.com/r/csshelp/comments/2sf96y/suddenly_the_css_on_my_pages_that_use_naut_is_out/cnox8ft */
+
+/*Spoiler Tags*/
+
+a[href$="/spoiler"] {
+    color: transparent;
+    text-shadow: 0 0 15px #f00, 0 0 15px #fee, 0 0 15px #f00, 0 0 15px #f33;
+    transition: ease-in-out 0.2s;
+}
+
+a[href$="/spoiler"]:hover {
+    color: inherit;
+    transition: ease-in-out 0.5s;
+    cursor: default;
+    text-shadow: none;
+}
+
+a[href$="/spoiler"]:before {
+    content:"SPOILER: ";
+    text-shadow: none;
+    color: #745050;
+}    
+
+a[href$="/answer"] {
+    color: transparent;
+    text-shadow: 0 0 15px #fd0, 0 0 15px #fde, 0 0 15px #fd0, 0 0 15px #fd3;
+    transition: ease-in-out 0.2s;
+}
+
+a[href$="/answer"]:hover {
+    color: inherit;
+    transition: ease-in-out 0.5s;
+    cursor: default;
+    text-shadow: none;
+}
+
+a[href$="/answer"]:before {
+    content:"ANSWER: ";
+    text-shadow: none;
+    color: #7C6F2E;
+}    
+
+a[href$="/hint"] {
+    color: transparent;
+    text-shadow: 0 0 15px #00f, 0 0 15px #eef, 0 0 15px #00f, 0 0 15px #33f;
+    transition: ease-in-out 0.2s;
+}
+
+a[href$="/hint"]:hover {
+    color: inherit;
+    transition: ease-in-out 0.5s;
+    cursor: default;
+    text-shadow: none;
+}
+
+a[href$="/hint"]:before {
+    content:"HINT: ";
+    text-shadow: none;
+    color: #474859;
+}    
+
+/* adds degree symbol when using [](/deg) markdown */
+a[href="/deg"] {
+    font-size: 0px;
+}
+a[href="/deg"]:before {
+    content: "°";
+    font-size: x-small;
+    color: black;
+    pointer-events: none;
+}
+
+/* Shortlink Embiggenage */
+.side .linkinfo .shortlink {
+  display: block !important;
+  clear: both !important;
+  color: transparent !important;
+  font-size: 0px !important;
+}
+.side .linkinfo .shortlink input {
+  border: none !important;
+  background: none !important;
+  font-size: 14px !important;
+  width: 100% !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  text-align: center !important;
+}
+/* End Shortlink Embiggenage */
